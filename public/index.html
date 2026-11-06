@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Food Court Order Management System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1>🍽️ Food Court Order Management System</h1></header>
+<main>
+  <section class="cards" id="cards"></section>
+
+  <section class="panel">
+    <h2>Menu Items</h2>
+    <div class="formrow">
+      <input type="hidden" id="mId">
+      <input id="mName" placeholder="Item name">
+      <input id="mCategory" placeholder="Category">
+      <input id="mStall" placeholder="Stall">
+      <input id="mPrice" type="number" min="0" step="0.01" placeholder="Price">
+      <input id="mStock" type="number" min="0" placeholder="Stock">
+      <button id="mSave" onclick="saveMenu()">Add Item</button>
+      <button class="gray" onclick="resetMenu()">Clear</button>
+    </div>
+    <div class="scroll"><table>
+      <thead><tr><th>ID</th><th>Name</th><th>Category</th><th>Stall</th><th>Price</th><th>Stock</th><th>Actions</th></tr></thead>
+      <tbody id="menuBody"></tbody>
+    </table></div>
+  </section>
+
+  <section class="panel">
+    <h2>New Order</h2>
+    <div class="formrow">
+      <input id="oName" placeholder="Customer name">
+      <select id="oItem"></select>
+      <input id="oQty" type="number" min="1" value="1">
+      <button onclick="addToCart()">Add to Order</button>
+    </div>
+    <ul id="cart"></ul>
+    <p><strong>Total: ₱<span id="cartTotal">0.00</span></strong>
+    <button onclick="placeOrder()">Place Order</button></p>
+  </section>
+
+  <section class="panel">
+    <h2>Orders</h2>
+    <div class="scroll"><table>
+      <thead><tr><th>ID</th><th>Customer</th><th>Items</th><th>Total</th><th>Status</th><th>Date</th><th>Actions</th></tr></thead>
+      <tbody id="orderBody"></tbody>
+    </table></div>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
