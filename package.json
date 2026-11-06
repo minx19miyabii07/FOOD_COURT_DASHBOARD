@@ -1,0 +1,13 @@
+{
+  "name": "food-court-oms",
+  "version": "1.0.0",
+  "description": "Food Court Order Management System - Express + SQLite CRUD dashboard",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}
